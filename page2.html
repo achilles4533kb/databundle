@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achilles Data Hub</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: #020617;
+    }
+
+    header h1 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #94a3b8;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      background: #22c55e;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .cards {
+      display: grid;
+      gap: 15px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .price {
+      font-size: 18px;
+      color: #22c55e;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .popular {
+      border: 2px solid #22c55e;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    @media(min-width: 600px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>📶 Achilles Data Hub</h1>
+</header>
+
+<section class="hero">
+  <h2>Cheap & Fast Data Bundles in Ghana</h2>
+  <p>Instant delivery • Reliable • Affordable</p>
+  <a class="btn" href="https://wa.me/233544786372?text=Hello%20I%20want%20to%20buy%20data">
+    Order on WhatsApp
+  </a>
+</section>
+
+<div class="container">
+  <h2 class="section-title">MTN Data Bundles</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>1GB</h3>
+      <p class="price">GHS 5</p>
+      <a class="btn" href="https://wa.me/233544786372?text=I%20want%201GB">Buy Now</a>
+    </div>
+
+    <div class="card popular">
+      <h3>2GB</h3>
+      <p class="price">GHS 10</p>
+      <a class="btn" href="https://wa.me/233544786372?text=I%20want%202GB">Buy Now</a>
+    </div>
+
+    <div class="card">
+      <h3>3GB</h3>
+      <p class="price">GHS 15</p>
+      <a class="btn" href="https://wa.me/233544786372?text=I%20want%203GB">Buy Now</a>
+    </div>
+
+    <div class="card">
+      <h3>5GB</h3>
+      <p class="price">GHS 25</p>
+      <a class="btn" href="https://wa.me/233544786372?text=I%20want%205GB">Buy Now</a>
+    </div>
+
+    <div class="card">
+      <h3>10GB</h3>
+      <p class="price">GHS 45</p>
+      <a class="btn" href="https://wa.me/233544786372?text=I%20want%2010GB">Buy Now</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 Achilles Data Hub • WhatsApp: 0544786372
+</footer>
+
+</body>
+</html>
