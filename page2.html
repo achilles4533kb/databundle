@@ -1,63 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Place Order</title>
-  <style>
-    body {
-      background: #0d1b2a;
-      color: white;
-      font-family: sans-serif;
-      text-align: center;
-      padding: 20px;
-    }
-
-    input, select {
-      width: 90%;
-      padding: 15px;
-      margin: 10px;
-      border-radius: 8px;
-      border: none;
-    }
-
-    button {
-      background: #25D366;
-      color: white;
-      padding: 15px;
-      width: 90%;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-  </style>
-</head>
-
-<body>
-
-<h1>📊 Place Your Order</h1>
-<p>Fast & Cheap Data Bundles</p>
-
-<input type="text" id="name" placeholder="Your Name">
-
 <select id="bundle">
   <option>1GB - GHS 5</option>
   <option>2GB - GHS 10</option>
+  <option>3GB - GHS 15</option>
+  <option>5GB - GHS 25</option>
+  <option>10GB - GHS 50</option>
+  <option>15GB - GHS 75</option>
+  <option>20GB - GHS 100</option>
+  <option>25GB - GHS 125</option>
+  <option>30GB - GHS 150</option>
+  <option>40GB - GHS 200</option>
+  <option>50GB - GHS 250</option>
 </select>
-
-<input type="text" id="phone" placeholder="Phone Number">
-
-<button onclick="orderNow()">Order via WhatsApp</button>
-
-<script>
-function orderNow() {
-  let name = document.getElementById("name").value;
-  let bundle = document.getElementById("bundle").value;
-  let phone = document.getElementById("phone").value;
-
-  let message = `Hello, I want to order ${bundle}%0AName: ${name}%0APhone: ${phone}`;
-
-  window.open(`https://wa.me/233544786372?text=${message}`);
-}
-</script>
-
-</body>
-</html>
