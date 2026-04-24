@@ -1,23 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Order Data</title>
+  <title>Place Order</title>
+  <style>
+    body {
+      background: #0d1b2a;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    input, select {
+      width: 90%;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    button {
+      background: #25D366;
+      color: white;
+      padding: 15px;
+      width: 90%;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 
-<body style="background:#0f172a; color:white; font-family:sans-serif; text-align:center;">
+<body>
 
-  <h1>Achilles Data Hub</h1>
-  <p>Buy affordable MTN data bundles</p>
+<h1>📊 Place Your Order</h1>
+<p>Fast & Cheap Data Bundles</p>
 
-  <div style="background:#1e293b; padding:20px; margin:20px;">
-    <h3>1GB - GHS 5</h3>
-    <a href="#" style="background:#22c55e; padding:10px; color:white;">Order Now</a>
-  </div>
+<input type="text" id="name" placeholder="Your Name">
 
-  <div style="background:#1e293b; padding:20px; margin:20px;">
-    <h3>2GB - GHS 10</h3>
-    <a href="#" style="background:#22c55e; padding:10px; color:white;">Order Now</a>
-  </div>
+<select id="bundle">
+  <option>1GB - GHS 5</option>
+  <option>2GB - GHS 10</option>
+</select>
+
+<input type="text" id="phone" placeholder="Phone Number">
+
+<button onclick="orderNow()">Order via WhatsApp</button>
+
+<script>
+function orderNow() {
+  let name = document.getElementById("name").value;
+  let bundle = document.getElementById("bundle").value;
+  let phone = document.getElementById("phone").value;
+
+  let message = `Hello, I want to order ${bundle}%0AName: ${name}%0APhone: ${phone}`;
+
+  window.open(`https://wa.me/233544786372?text=${message}`);
+}
+</script>
 
 </body>
 </html>
