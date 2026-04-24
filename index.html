@@ -1,10 +1,140 @@
-<button onclick="orderNow()">Buy Now</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Achilles Data Hub</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1a2f;
+  color: white;
+  text-align: center;
+}
+
+header {
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 28px;
+}
+
+header p {
+  color: #ccc;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  color: black;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+  margin: 0;
+}
+
+.form {
+  margin-top: 30px;
+}
+
+input, select {
+  width: 90%;
+  padding: 12px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  width: 90%;
+  padding: 15px;
+  margin-top: 10px;
+  background: #25D366;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+}
+
+button:hover {
+  background: #1ebe5d;
+}
+
+.footer {
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📶 Achilles Data Hub</h1>
+  <p>Fast & Cheap Data Bundles</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>1GB</h2>
+    <p>GHS 5</p>
+  </div>
+
+  <div class="card">
+    <h2>2GB</h2>
+    <p>GHS 10</p>
+  </div>
+
+  <div class="card">
+    <h2>Custom Bundle</h2>
+    <p>Contact us on WhatsApp</p>
+  </div>
+
+  <div class="form">
+    <h2>Place Your Order</h2>
+
+    <input id="name" placeholder="Your Name">
+    <input id="phone" placeholder="Phone Number">
+
+    <select id="bundle">
+      <option>1GB - GHS 5</option>
+      <option>2GB - GHS 10</option>
+      <option>Custom Bundle</option>
+    </select>
+
+    <button onclick="orderNow()">Buy Now via WhatsApp</button>
+  </div>
+
+</div>
+
+<div class="footer">
+  Contact: 0544 786 372 <br><br>
+  © 2026 Achilles Data Hub
+</div>
 
 <script>
 function orderNow() {
   var name = document.getElementById("name").value;
   var number = document.getElementById("phone").value;
   var bundle = document.getElementById("bundle").value;
+
+  if(name === "" || number === "") {
+    alert("Please fill all fields");
+    return;
+  }
 
   var message = "Hello, I want to buy data.%0AName: " + name +
                 "%0APhone: " + number +
@@ -13,3 +143,6 @@ function orderNow() {
   window.open("https://wa.me/233544786372?text=" + message, "_blank");
 }
 </script>
+
+</body>
+</html>
