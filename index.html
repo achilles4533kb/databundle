@@ -1,41 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Payment</title>
-  <script src="https://js.paystack.co/v1/inline.js"></script>
-</head>
-<body style="text-align:center; font-family:sans-serif;">
-
-  <h2>Enter your phone number</h2>
-
-  <input type="text" id="phone" placeholder="e.g. 024XXXXXXX" style="padding:10px; width:80%;"><br><br>
-
-  <button onclick="payNow()" style="padding:15px; background:green; color:white; border:none;">
-    Pay Now
-  </button>
-
-  <script>
-    function payNow() {
-      var phone = document.getElementById("phone").value;
-
-      var handler = PaystackPop.setup({
-        key: "YOUR_PUBLIC_KEY_HERE",
-        email: "customer@email.com",
-        amount: 500 * 100,
-        currency: "GHS",
-
-        callback: function(response) {
-          alert("Payment successful! Data will be delivered soon.");
-        },
-
-        onClose: function() {
-          alert("Payment cancelled");
-        }
-      });
-
-      handler.openIframe();
+  <title>Achilles Data Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      margin: 0;
+      text-align: center;
     }
-  </script>
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      margin: 20px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #22c55e;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Our Services</h1>
+
+  <div class="card">
+    <h2>1GB</h2>
+    <p>GHS 5</p>
+    <a href="page2.html" class="btn">Buy Now</a>
+  </div>
+
+  <div class="card">
+    <h2>2GB</h2>
+    <p>GHS 10</p>
+    <a href="page2.html" class="btn">Buy Now</a>
+  </div>
+
+  <div class="card">
+    <h2>Custom Bundles</h2>
+    <p>Contact us for more</p>
+  </div>
+
+  <h2>Contact Us</h2>
+  <p>Phone / WhatsApp: 0544 786 372</p>
+
+  <footer>
+    © 2026 Achilles Data Bundle
+  </footer>
 
 </body>
 </html>
