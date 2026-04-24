@@ -3,10 +3,12 @@
 <head>
   <title>Achilles Data Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f1f5f9;
+      background: #0f172a;
+      color: white;
       margin: 0;
       text-align: center;
     }
@@ -16,26 +18,36 @@
     }
 
     .card {
-      background: white;
-      margin: 20px;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: #1e293b;
+      margin: 15px;
+      padding: 20px;
+      border-radius: 12px;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 15px;
+      margin-top: 10px;
       padding: 10px 20px;
       background: #22c55e;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 6px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 20px;
     }
 
     footer {
-      background: #0f172a;
-      color: white;
+      background: #020617;
       padding: 15px;
       margin-top: 30px;
     }
@@ -44,31 +56,34 @@
 
 <body>
 
-  <h1>Our Services</h1>
+  <h1>Achilles Data Hub</h1>
+  <p>Buy affordable MTN data bundles instantly</p>
 
   <div class="card">
     <h2>1GB</h2>
     <p>GHS 5</p>
-    <a href="page2.html" class="btn">Buy Now</a>
+    <a href="page2.html?amount=500" class="btn">Order Now</a>
   </div>
 
   <div class="card">
     <h2>2GB</h2>
     <p>GHS 10</p>
-    <a href="page2.html" class="btn">Buy Now</a>
+    <a href="page2.html?amount=1000" class="btn">Order Now</a>
   </div>
 
   <div class="card">
-    <h2>Custom Bundles</h2>
-    <p>Contact us for more</p>
+    <h2>Need Help?</h2>
+    <p>Chat with us instantly on WhatsApp</p>
+    <a href="https://wa.me/233544786372" class="btn">Chat Now</a>
   </div>
 
-  <h2>Contact Us</h2>
-  <p>Phone / WhatsApp: 0544 786 372</p>
-
   <footer>
-    © 2026 Achilles Data Bundle
+    Contact: 0544 786 372 <br>
+    © 2026 Achilles Data Hub
   </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/233544786372" class="whatsapp">💬</a>
 
 </body>
 </html>
