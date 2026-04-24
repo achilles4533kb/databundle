@@ -1,5 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+function sendToWhatsApp() {
+  var name = document.getElementById("name").value;
+  var bundle = document.getElementById("bundle").value;
+  var phone = document.getElementById("phone").value;
+
+  var message = "Hello, I want to order:\n"
+              + "Name: " + name + "\n"
+              + "Bundle: " + bundle + "\n"
+              + "Phone: " + phone;
+
+  var url = "https://wa.me/233544786372?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+</script>
+<form onsubmit="sendToWhatsApp(); return false;" style="background:#fff; padding:15px; border-radius:10px;">
+
+  <label>Name:</label><br>
+  <input type="text" id="name" required style="width:100%; padding:10px; margin-bottom:10px;"><br>
+
+  <label>Select Bundle:</label><br>
+  <select id="bundle" style="width:100%; padding:10px; margin-bottom:10px;">
+    <option>1GB - GHS 5</option>
+    <option>2GB - GHS 10</option>
+  </select><br>
+
+  <label>Phone Number:</label><br>
+  <input type="text" id="phone" required style="width:100%; padding:10px; margin-bottom:10px;"><br>
+
+  <button type="submit" style="background:green; color:white; padding:12px; width:100%; border:none; border-radius:5px;">
+    Order on WhatsApp
+  </button>
+
+</form><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
