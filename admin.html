@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard - Achilles Data Hub</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .order {
+      background: #1e293b;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+
+    .paid { border-left: 5px solid green; }
+    .pending { border-left: 5px solid orange; }
+
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      border: none;
+      background: green;
+      color: white;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>📊 Orders Dashboard</h1>
+
+<div class="order pending">
+  <p><strong>Name:</strong> John</p>
+  <p><strong>Bundle:</strong> 1GB - GHS 5</p>
+  <p><strong>Status:</strong> Pending</p>
+  <button onclick="markPaid(this)">Mark as Paid</button>
+</div>
+
+<div class="order paid">
+  <p><strong>Name:</strong> Ama</p>
+  <p><strong>Bundle:</strong> 2GB - GHS 10</p>
+  <p><strong>Status:</strong> Paid</p>
+</div>
+
+<script>
+function markPaid(btn) {
+  let order = btn.parentElement;
+  order.classList.remove("pending");
+  order.classList.add("paid");
+  order.querySelector("p:nth-child(3)").innerHTML = "<strong>Status:</strong> Paid";
+  btn.remove();
+}
+</script>
+
+</body>
+</html>
