@@ -1,21 +1,41 @@
-<script src="https://js.paystack.co/v1/inline.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment</title>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body style="text-align:center; font-family:sans-serif;">
 
-<button onclick="payWithPaystack()">Pay Now</button>
+  <h2>Enter your phone number</h2>
 
-<script>
-function payWithPaystack() {
-  let handler = PaystackPop.setup({
-    key: 'YOUR_PUBLIC_KEY_HERE',
-    email: 'customer@email.com',
-    amount: 500 * 100, // 5 GHS = 500 pesewas
-    currency: 'GHS',
-    callback: function(response){
-      window.location.href = "success.html?ref=" + response.reference;
-    },
-    onClose: function(){
-      alert('Payment cancelled');
+  <input type="text" id="phone" placeholder="e.g. 024XXXXXXX" style="padding:10px; width:80%;"><br><br>
+
+  <button onclick="payNow()" style="padding:15px; background:green; color:white; border:none;">
+    Pay Now
+  </button>
+
+  <script>
+    function payNow() {
+      var phone = document.getElementById("phone").value;
+
+      var handler = PaystackPop.setup({
+        key: "YOUR_PUBLIC_KEY_HERE",
+        email: "customer@email.com",
+        amount: 500 * 100,
+        currency: "GHS",
+
+        callback: function(response) {
+          alert("Payment successful! Data will be delivered soon.");
+        },
+
+        onClose: function() {
+          alert("Payment cancelled");
+        }
+      });
+
+      handler.openIframe();
     }
-  });
-  handler.openIframe();
-}
-</script>
+  </script>
+
+</body>
+</html>
