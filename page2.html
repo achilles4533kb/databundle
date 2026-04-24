@@ -1,13 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Data</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0b1a33;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+input, select {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.contact {
+  text-align: center;
+  margin-top: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📊 Place Your Order</h1>
+<p style="text-align:center;">Fast & Cheap Data Bundles</p>
+
+<input type="text" id="name" placeholder="Your Name">
+
 <select id="bundle">
   <option>1GB - GHS 5</option>
   <option>2GB - GHS 10</option>
-  <option>3GB - GHS 15</option>
   <option>5GB - GHS 25</option>
   <option>10GB - GHS 50</option>
-  <option>15GB - GHS 75</option>
   <option>20GB - GHS 100</option>
-  <option>25GB - GHS 125</option>
-  <option>30GB - GHS 150</option>
-  <option>40GB - GHS 200</option>
   <option>50GB - GHS 250</option>
 </select>
+
+<input type="tel" id="phone" placeholder="Phone Number">
+
+<button onclick="order()">Order via WhatsApp</button>
+
+<div class="contact">
+  <p>Or contact us directly:</p>
+  <p><b>📞 0544 786 372</b></p>
+</div>
+
+</div>
+
+<script>
+function order() {
+  var name = document.getElementById("name").value;
+  var bundle = document.getElementById("bundle").value;
+  var phone = document.getElementById("phone").value;
+
+  var message = "Hello, I want to order:\n\nName: " + name +
+                "\nBundle: " + bundle +
+                "\nPhone: " + phone;
+
+  var url = "https://wa.me/233544786372?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
