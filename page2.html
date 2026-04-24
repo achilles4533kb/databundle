@@ -1,49 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Order Data</title>
+<title>Achilles Data Hub</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial;
-  background: #0b1a33;
+  background: #0b1a2f;
   color: white;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 .container {
-  width: 100%;
   padding: 20px;
+  animation: slideUp 1s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 h1 {
-  text-align: center;
+  margin-top: 20px;
 }
 
-input, select {
-  width: 100%;
-  padding: 15px;
-  margin: 10px 0;
+.card {
+  background: #13294b;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+select, input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px;
   border-radius: 8px;
   border: none;
 }
 
 button {
-  width: 100%;
-  padding: 15px;
   background: #25D366;
   color: white;
   border: none;
-  border-radius: 8px;
+  padding: 15px;
+  width: 90%;
+  border-radius: 10px;
   font-size: 16px;
+  animation: pulse 1.5s infinite;
 }
 
-.contact {
-  text-align: center;
-  margin-top: 20px;
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.05);}
+  100% {transform: scale(1);}
 }
+
 </style>
+
+<script>
+function orderNow() {
+  var name = document.getElementById("name").value;
+  var bundle = document.getElementById("bundle").value;
+  var phone = document.getElementById("phone").value;
+
+  var message = "Hello, I want to order:\nName: " + name +
+                "\nBundle: " + bundle +
+                "\nPhone: " + phone;
+
+  var url = "https://wa.me/233544786372?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+</script>
 
 </head>
 
@@ -51,8 +94,10 @@ button {
 
 <div class="container">
 
-<h1>📊 Place Your Order</h1>
-<p style="text-align:center;">Fast & Cheap Data Bundles</p>
+<h1>📊 Achilles Data Hub</h1>
+<p>Fast & Cheap Data Bundles</p>
+
+<div class="card">
 
 <input type="text" id="name" placeholder="Your Name">
 
@@ -62,35 +107,17 @@ button {
   <option>5GB - GHS 25</option>
   <option>10GB - GHS 50</option>
   <option>20GB - GHS 100</option>
+  <option>30GB - GHS 150</option>
   <option>50GB - GHS 250</option>
 </select>
 
-<input type="tel" id="phone" placeholder="Phone Number">
+<input type="text" id="phone" placeholder="Phone Number">
 
-<button onclick="order()">Order via WhatsApp</button>
-
-<div class="contact">
-  <p>Or contact us directly:</p>
-  <p><b>📞 0544 786 372</b></p>
-</div>
+<button onclick="orderNow()">Order via WhatsApp</button>
 
 </div>
 
-<script>
-function order() {
-  var name = document.getElementById("name").value;
-  var bundle = document.getElementById("bundle").value;
-  var phone = document.getElementById("phone").value;
-
-  var message = "Hello, I want to order:\n\nName: " + name +
-                "\nBundle: " + bundle +
-                "\nPhone: " + phone;
-
-  var url = "https://wa.me/233544786372?text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank");
-}
-</script>
+</div>
 
 </body>
 </html>
