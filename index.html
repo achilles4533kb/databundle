@@ -1,89 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Achilles Data Hub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Achilles Data Hub</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      margin: 0;
-      text-align: center;
-    }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1a33;
+    color: white;
+    text-align: center;
+}
 
-    h1 {
-      margin-top: 20px;
-    }
+/* Smooth animation */
+body {
+    animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 
-    .card {
-      background: #1e293b;
-      margin: 15px;
-      padding: 20px;
-      border-radius: 12px;
-    }
+.container {
+    padding: 20px;
+    animation: slideUp 1s ease;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #22c55e;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
     }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      padding: 15px;
-      border-radius: 50%;
-      text-decoration: none;
-      font-size: 20px;
-    }
+h1 {
+    font-size: 28px;
+}
 
-    footer {
-      background: #020617;
-      padding: 15px;
-      margin-top: 30px;
-    }
-  </style>
+.card {
+    background: #13264a;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+button {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Floating WhatsApp */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+</style>
 </head>
 
 <body>
 
-  <h1>Achilles Data Hub</h1>
-  <p>Buy affordable MTN data bundles instantly</p>
+<div class="container">
+    <h1>📊 Achilles Data Hub</h1>
+    <p>Fast & Cheap Data Bundles</p>
 
-  <div class="card">
-    <h2>1GB</h2>
-    <p>GHS 5</p>
-    <a href="page2.html?amount=500" class="btn">Order Now</a>
-  </div>
+    <!-- 1GB -->
+    <div class="card">
+        <h2>1GB - GHS 5</h2>
+        <button onclick="order('1GB - GHS 5')">Order via WhatsApp</button>
+    </div>
 
-  <div class="card">
-    <h2>2GB</h2>
-    <p>GHS 10</p>
-    <a href="page2.html?amount=1000" class="btn">Order Now</a>
-  </div>
+    <!-- 2GB -->
+    <div class="card">
+        <h2>2GB - GHS 10</h2>
+        <button onclick="order('2GB - GHS 10')">Order via WhatsApp</button>
+    </div>
 
-  <div class="card">
-    <h2>Need Help?</h2>
-    <p>Chat with us instantly on WhatsApp</p>
-    <a href="https://wa.me/233544786372" class="btn">Chat Now</a>
-  </div>
+    <!-- MORE DATA -->
+    <div class="card">
+        <h2>More Bundles (Up to 50GB)</h2>
+        <button onclick="order('Custom Bundle')">Contact on WhatsApp</button>
+    </div>
+</div>
 
-  <footer>
-    Contact: 0544 786 372 <br>
-    © 2026 Achilles Data Hub
-  </footer>
+<!-- Floating Button -->
+<a class="whatsapp" href="https://wa.me/233544786372">💬</a>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/233544786372" class="whatsapp">💬</a>
+<script>
+function order(bundle) {
+    let message = "Hello, I want to order " + bundle;
+    window.location.href = "https://wa.me/233544786372?text=" + encodeURIComponent(message);
+}
+</script>
 
 </body>
 </html>
