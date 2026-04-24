@@ -1,114 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Achilles Data Hub</title>
 
 <style>
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b1a33;
-    color: white;
-    text-align: center;
+  margin: 0;
+  font-family: Arial;
+  background: #0b1a2f;
+  color: white;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in;
 }
 
-/* Smooth animation */
-body {
-    animation: fadeIn 1s ease-in;
-}
 @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 .container {
-    padding: 20px;
-    animation: slideUp 1s ease;
+  padding: 20px;
+  animation: slideUp 1s ease;
 }
 
 @keyframes slideUp {
-    from {
-        transform: translateY(40px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 h1 {
-    font-size: 28px;
+  margin-top: 20px;
 }
 
 .card {
-    background: #13264a;
-    margin: 15px;
-    padding: 15px;
-    border-radius: 10px;
+  background: #13294b;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+select, input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
 }
 
 button {
-    background: #25D366;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 6px;
-    width: 100%;
-    font-size: 16px;
-    cursor: pointer;
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 15px;
+  width: 90%;
+  border-radius: 10px;
+  font-size: 16px;
+  animation: pulse 1.5s infinite;
 }
 
-/* Floating WhatsApp */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 20px;
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.05);}
+  100% {transform: scale(1);}
 }
+
 </style>
+
+<script>
+function orderNow() {
+  var name = document.getElementById("name").value;
+  var bundle = document.getElementById("bundle").value;
+  var phone = document.getElementById("phone").value;
+
+  var message = "Hello, I want to order:\nName: " + name +
+                "\nBundle: " + bundle +
+                "\nPhone: " + phone;
+
+  var url = "https://wa.me/233544786372?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+</script>
+
 </head>
 
 <body>
 
 <div class="container">
-    <h1>📊 Achilles Data Hub</h1>
-    <p>Fast & Cheap Data Bundles</p>
 
-    <!-- 1GB -->
-    <div class="card">
-        <h2>1GB - GHS 5</h2>
-        <button onclick="order('1GB - GHS 5')">Order via WhatsApp</button>
-    </div>
+<h1>📊 Achilles Data Hub</h1>
+<p>Fast & Cheap Data Bundles</p>
 
-    <!-- 2GB -->
-    <div class="card">
-        <h2>2GB - GHS 10</h2>
-        <button onclick="order('2GB - GHS 10')">Order via WhatsApp</button>
-    </div>
+<div class="card">
 
-    <!-- MORE DATA -->
-    <div class="card">
-        <h2>More Bundles (Up to 50GB)</h2>
-        <button onclick="order('Custom Bundle')">Contact on WhatsApp</button>
-    </div>
+<input type="text" id="name" placeholder="Your Name">
+
+<select id="bundle">
+  <option>1GB - GHS 5</option>
+  <option>2GB - GHS 10</option>
+  <option>5GB - GHS 25</option>
+  <option>10GB - GHS 50</option>
+  <option>20GB - GHS 100</option>
+  <option>30GB - GHS 150</option>
+  <option>50GB - GHS 250</option>
+</select>
+
+<input type="text" id="phone" placeholder="Phone Number">
+
+<button onclick="orderNow()">Order via WhatsApp</button>
+
 </div>
 
-<!-- Floating Button -->
-<a class="whatsapp" href="https://wa.me/233544786372">💬</a>
-
-<script>
-function order(bundle) {
-    let message = "Hello, I want to order " + bundle;
-    window.location.href = "https://wa.me/233544786372?text=" + encodeURIComponent(message);
-}
-</script>
+</div>
 
 </body>
 </html>
