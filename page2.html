@@ -3,30 +3,65 @@
 <head>
 <title>Order - Achilles Data Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: sans-serif;
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+}
+button {
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+}
+.box {
+  background:#1e293b;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+</style>
+
 </head>
 
-<body style="font-family:sans-serif; background:#0f172a; color:white; text-align:center; padding:20px;">
+<body>
 
 <h1>📶 Place Your Order</h1>
-<p>Fast & Cheap Data Bundles</p>
 
-<form onsubmit="sendOrder(); return false;" style="max-width:400px; margin:auto;">
+<div class="box">
+<h3>💳 Step 1: Pay via MTN MoMo</h3>
+<p><strong>Number:</strong> 0544786372</p>
+<p><strong>Name:</strong> Achilles Data Hub</p>
+<p>Send the exact amount before placing order</p>
+</div>
 
-<input type="text" id="name" placeholder="Your Name" required
-style="width:100%; padding:12px; margin:10px 0; border-radius:6px; border:none;">
+<form onsubmit="sendOrder(); return false;">
 
-<select id="bundle" style="width:100%; padding:12px; margin:10px 0; border-radius:6px;">
+<input type="text" id="name" placeholder="Your Name" required>
+
+<select id="bundle">
 <option>1GB - GHS 5</option>
 <option>2GB - GHS 10</option>
 </select>
 
-<input type="text" id="number" placeholder="Phone Number" required
-style="width:100%; padding:12px; margin:10px 0; border-radius:6px; border:none;">
+<input type="text" id="number" placeholder="Your Phone Number" required>
 
-<button type="submit"
-style="background:#25D366; color:white; padding:15px; width:100%; border:none; border-radius:6px;">
-Order via WhatsApp
-</button>
+<input type="text" id="ref" placeholder="MoMo Reference ID" required>
+
+<button type="submit">Confirm Payment & Order</button>
 
 </form>
 
@@ -35,10 +70,12 @@ function sendOrder() {
   var name = document.getElementById("name").value;
   var bundle = document.getElementById("bundle").value;
   var number = document.getElementById("number").value;
+  var ref = document.getElementById("ref").value;
 
-  var message = "Hello, I want to order:\n\nName: " + name +
+  var message = "NEW ORDER\n\nName: " + name +
                 "\nBundle: " + bundle +
-                "\nPhone: " + number;
+                "\nPhone: " + number +
+                "\nMoMo Ref: " + ref;
 
   var url = "https://wa.me/233544786372?text=" + encodeURIComponent(message);
 
@@ -47,176 +84,4 @@ function sendOrder() {
 </script>
 
 </body>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Order - Achilles Data Hub</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body style="font-family:sans-serif; background:#0f172a; color:white; text-align:center; padding:20px;">
-
-<h1>📶 Place Your Order</h1>
-<p>Fast & Cheap Data Bundles</p>
-
-<form onsubmit="sendOrder(); return false;" style="max-width:400px; margin:auto;">
-
-<input type="text" id="name" placeholder="Your Name" required
-style="width:100%; padding:12px; margin:10px 0; border-radius:6px; border:none;">
-
-<select id="bundle" style="width:100%; padding:12px; margin:10px 0; border-radius:6px;">
-<option>1GB - GHS 5</option>
-<option>2GB - GHS 10</option>
-</select>
-
-<input type="text" id="number" placeholder="Phone Number" required
-style="width:100%; padding:12px; margin:10px 0; border-radius:6px; border:none;">
-
-<button type="submit"
-style="background:#25D366; color:white; padding:15px; width:100%; border:none; border-radius:6px;">
-Order via WhatsApp
-</button>
-
-</form>
-
-<script>
-function sendOrder() {
-  var name = document.getElementById("name").value;
-  var bundle = document.getElementById("bundle").value;
-  var number = document.getElementById("number").value;
-
-  var message = "Hello, I want to order:\n\nName: " + name +
-                "\nBundle: " + bundle +
-                "\nPhone: " + number;
-
-  var url = "https://wa.me/233544786372?text=" + encodeURIComponent(message);
-
-  window.open(url, '_blank');
-}
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html>
-<head>
-<title>Order - Achilles Data Hub</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body style="font-family:sans-serif; background:#0f172a; color:white; text-align:center; padding:20px;">
-
-<h1>📶 Place Your Order</h1>
-<p>Fast & Cheap Data Bundles</p>
-
-<form onsubmit="sendOrder(); return false;" style="max-width:400px; margin:auto;">
-
-<input type="text" id="name" placeholder="Your Name" required
-style="width:100%; padding:12px; margin:10px 0; border-radius:6px; border:none;">
-
-<select id="bundle" style="width:100%; padding:12px; margin:10px 0; border-radius:6px;">
-<option>1GB - GHS 5</option>
-<option>2GB - GHS 10</option>
-</select>
-
-<input type="text" id="number" placeholder="Phone Number" required
-style="width:100%; padding:12px; margin:10px 0; border-radius:6px; border:none;">
-
-<button type="submit"
-style="background:#25D366; color:white; padding:15px; width:100%; border:none; border-radius:6px;">
-Order via WhatsApp
-</button>
-
-</form>
-
-<script>
-function sendOrder() {
-  var name = document.getElementById("name").value;
-  var bundle = document.getElementById("bundle").value;
-  var number = document.getElementById("number").value;
-
-  var message = "Hello, I want to order:\n\nName: " + name +
-                "\nBundle: " + bundle +
-                "\nPhone: " + number;
-
-  var url = "https://wa.me/233544786372?text=" + encodeURIComponent(message);
-
-  window.open(url, '_blank');
-}
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html>
-<head>
-<title>Order - Achilles Data Hub</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body style="font-family:sans-serif; background:#0f172a; color:white; text-align:center; padding:20px;">
-
-<h1>📶 Place Your Order</h1>
-<p>Fast & Cheap Data Bundles</p>
-
-<form onsubmit="sendOrder(); return false;" style="max-width:400px; margin:auto;">
-
-<input type="text" id="name" placeholder="Your Name" required
-style="width:100%; padding:12px; margin:10px 0; border-radius:6px; border:none;">
-
-<select id="bundle" style="width:100%; padding:12px; margin:10px 0; border-radius:6px;">
-<option>1GB - GHS 5</option>
-<option>2GB - GHS 10</option>
-</select>
-
-<input type="text" id="number" placeholder="Phone Number" required
-style="width:100%; padding:12px; margin:10px 0; border-radius:6px; border:none;">
-
-<button type="submit"
-style="background:#25D366; color:white; padding:15px; width:100%; border:none; border-radius:6px;">
-Order via WhatsApp
-</button>
-
-</form>
-
-<script>
-function sendOrder() {
-  var name = document.getElementById("name").value;
-  var bundle = document.getElementById("bundle").value;
-  var number = document.getElementById("number").value;
-
-  var message = "Hello, I want to order:\n\nName: " + name +
-                "\nBundle: " + bundle +
-                "\nPhone: " + number;
-
-  var url = "https://wa.me/233544786372?text=" + encodeURIComponent(message);
-
-  window.open(url, '_blank');
-}
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html>
-<head>
-<title>Order - Achilles Data Hub</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body style="font-family:sans-serif; background:#0f172a; color:white; text-align:center; padding:20px;">
-
-<h1>📶 Place Your Order</h1>
-<p>Fast & Cheap Data Bundles</p>
-
-<form onsubmit="sendOrder(); return false;" style="max-width:400px; margin:auto;">
-
-<input type="text" id="name" placeholder="Your Name" required
-style="width:100%; padding:12px; margin:10px 0; border-radius:6px; border:none;">
-
-<select id="bundle" style="width:100%; padding:12px; margin:10px 0; border-radius:6px;">
-<option>1GB - GHS 5</option>
-<option>2GB - GHS 10</option>
-</select>
-
-<a href="page2.html" style="background:#25D366; color:white; padding:12px 20px; border-radius:6px; text-decoration:none; display:inline-block;">
- Order Now
-</a>
-
+</html>
