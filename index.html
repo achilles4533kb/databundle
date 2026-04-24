@@ -1,93 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Achilles Data Hub</title>
 
 <style>
 body {
-  margin: 0;
-  font-family: Arial;
-  background: #0b1a2f;
-  color: white;
-  text-align: center;
-  animation: fadeIn 1.2s ease-in;
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #0b1a2e, #132c4c);
+    color: white;
+    text-align: center;
 }
 
+/* Smooth animation */
+body {
+    animation: fadeIn 1s ease-in;
+}
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
+/* Container */
 .container {
-  padding: 20px;
-  animation: slideUp 1s ease;
+    padding: 20px;
+}
+
+/* Big Header */
+h1 {
+    font-size: 28px;
+}
+
+/* Card */
+.card {
+    background: white;
+    color: black;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    animation: slideUp 0.8s ease;
 }
 
 @keyframes slideUp {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-h1 {
-  margin-top: 20px;
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    background: #eee;
 }
 
-.card {
-  background: #13294b;
-  margin: 15px;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-select, input {
-  width: 90%;
-  padding: 12px;
-  margin: 10px;
-  border-radius: 8px;
-  border: none;
-}
-
+/* Button */
 button {
-  background: #25D366;
-  color: white;
-  border: none;
-  padding: 15px;
-  width: 90%;
-  border-radius: 10px;
-  font-size: 16px;
-  animation: pulse 1.5s infinite;
+    width: 100%;
+    padding: 14px;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
-@keyframes pulse {
-  0% {transform: scale(1);}
-  50% {transform: scale(1.05);}
-  100% {transform: scale(1);}
+/* Hover effect */
+button:hover {
+    background: #1ebe5d;
 }
 
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding: 15px;
+    background: #081220;
+}
 </style>
-
-<script>
-function orderNow() {
-  var name = document.getElementById("name").value;
-  var bundle = document.getElementById("bundle").value;
-  var phone = document.getElementById("phone").value;
-
-  var message = "Hello, I want to order:\nName: " + name +
-                "\nBundle: " + bundle +
-                "\nPhone: " + phone;
-
-  var url = "https://wa.me/233544786372?text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank");
-}
-</script>
-
 </head>
 
 <body>
@@ -95,29 +97,57 @@ function orderNow() {
 <div class="container">
 
 <h1>📊 Achilles Data Hub</h1>
-<p>Fast & Cheap Data Bundles</p>
+<p>Fast & Cheap MTN Data Bundles</p>
 
 <div class="card">
 
-<input type="text" id="name" placeholder="Your Name">
+<h2>Place Your Order</h2>
 
-<select id="bundle">
-  <option>1GB - GHS 5</option>
-  <option>2GB - GHS 10</option>
-  <option>5GB - GHS 25</option>
-  <option>10GB - GHS 50</option>
-  <option>20GB - GHS 100</option>
-  <option>30GB - GHS 150</option>
-  <option>50GB - GHS 250</option>
-</select>
+<input type="text" id="name" placeholder="Your Name">
 
 <input type="text" id="phone" placeholder="Phone Number">
 
-<button onclick="orderNow()">Order via WhatsApp</button>
+<input type="text" id="ref" placeholder="Reference Number">
+
+<select id="bundle">
+    <option>1GB - GHS 5</option>
+    <option>2GB - GHS 10</option>
+    <option>3GB - GHS 15</option>
+    <option>5GB - GHS 25</option>
+    <option>10GB - GHS 50</option>
+    <option>Custom Bundle</option>
+</select>
+
+<button onclick="sendToWhatsApp()">BUY NOW</button>
 
 </div>
 
+<div class="card">
+<h3>Need More Data?</h3>
+<p>Contact us directly on WhatsApp for bulk orders</p>
 </div>
+
+</div>
+
+<footer>
+© 2026 Achilles Data Bundle
+</footer>
+
+<script>
+function sendToWhatsApp() {
+    var name = document.getElementById("name").value;
+    var phone = document.getElementById("phone").value;
+    var ref = document.getElementById("ref").value;
+    var bundle = document.getElementById("bundle").value;
+
+    var message = "Hello, I want to buy " + bundle +
+    "%0AName: " + name +
+    "%0APhone: " + phone +
+    "%0AReference: " + ref;
+
+    window.open("https://wa.me/233544786372?text=" + message, "_blank");
+}
+</script>
 
 </body>
 </html>
